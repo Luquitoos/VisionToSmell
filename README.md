@@ -1,4 +1,4 @@
-# Video-converte Documentation
+# VisionToSmell Documentation
 
 **English Documentation** | [Documentação em Português](README.pt.md)
 
