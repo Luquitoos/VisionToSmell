@@ -1,0 +1,25 @@
+{
+  "name": "video-converter",
+  "version": "1.0.0",
+  "description": "Video to Audio Converter Application",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:backend": "cd backend && npm run dev",
+    "start:frontend": "cd frontend && set NODE_OPTIONS=--openssl-legacy-provider && npm start",
+    "dev": "concurrently --kill-others-on-fail \"npm run start:backend\" \"timeout /t 5 && npm run start:frontend\"",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "video",
+    "audio",
+    "converter",
+    "ffmpeg"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
