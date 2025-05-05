@@ -72,6 +72,8 @@ FFmpeg is a critical dependency for this project as it handles the actual video-
    ffmpeg -version
    ```
 
+   OR https://www.youtube.com/watch?v=mEV5ZRqaWu8 (EASY WAY)
+
 #### macOS (using Homebrew)
 ```bash
 brew install ffmpeg
