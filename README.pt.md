@@ -71,7 +71,6 @@ FFmpeg é uma dependência crítica para este projeto, pois realiza a conversão
    ```
    ffmpeg -version
    ```
-   OU https://www.youtube.com/watch?v=mEV5ZRqaWu8 (Alternativa mais facil)
 
 #### macOS (usando Homebrew)
 ```bash
