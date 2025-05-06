@@ -28,7 +28,7 @@ const getConversionById = async (req, res) => {
   try {
     const { id } = req.params;
     
-    // Verificar se o ID é um ObjectId válido do MongoDB
+    /* Verificar se o ID é um ObjectId válido do MongoDB */
     if (!isValidObjectId(id)) {
       return res.status(400).json(formatResponse(false, null, 'ID de conversão inválido'));
     }
@@ -77,7 +77,6 @@ const downloadConversion = async (req, res) => {
   try {
     const { id } = req.params;
     
-    // Verificar se o ID é um ObjectId válido do MongoDB
     if (!isValidObjectId(id)) {
       return res.status(400).json(formatResponse(false, null, 'ID de conversão inválido'));
     }
@@ -116,7 +115,6 @@ const deleteConversion = async (req, res) => {
   try {
     const { id } = req.params;
     
-    // Verificar se o ID é um ObjectId válido do MongoDB
     if (!isValidObjectId(id)) {
       return res.status(400).json(formatResponse(false, null, 'ID de conversão inválido'));
     }
@@ -127,13 +125,13 @@ const deleteConversion = async (req, res) => {
       return res.status(404).json(formatResponse(false, null, 'Conversão não encontrada'));
     }
     
-    // Tentar excluir arquivos, mas não falhar se os arquivos já não existirem
+    /* Tentar excluir arquivos, mas não falhar se os arquivos já não existirem */
     try {
       fileHelper.deleteFile(conversion.videoPath);
       fileHelper.deleteFile(conversion.audioPath);
     } catch (fileError) {
       errorHandler.logError('conversionController.deleteConversion.fileDelete', fileError);
-      // Continuar com a exclusão do registro mesmo se os arquivos não puderem ser excluídos
+      /* Continuar com a exclusão mesmo se os arquivos não puderem ser excluídos */
     }
     
     await Conversion.findByIdAndDelete(id);
